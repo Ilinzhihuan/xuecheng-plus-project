@@ -1,0 +1,37 @@
+#微服务配置
+spring:
+  application:
+    name: media-api
+  cloud:
+    nacos:
+      server-addr: 192.168.121.135:8849
+      discovery:
+        namespace: dev402
+        group: xuecheng-plus-project
+      config:
+        namespace: dev402
+        group: xuecheng-plus-project
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: media-service-${spring.profiles.active}.yaml
+            group: xuecheng-plus-project
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
+
+  profiles:
+    active: dev
+
+logging:
+  config: classpath:log4j2-dev.xml
+  level:
+    org.springframework.cloud.gateway: trace
+    com:
+      alibaba:
+        nacos: warn

@@ -1,0 +1,10 @@
+### 申请验证码
+POST {{checkcode_host}}/checkcode/pic
+
+###
+POST http://192.168.121.135:63075/checkcode/pic
+
+
+### 校验验证码
+POST {{checkcode_host}}/checkcode/verify?key=checkcode:8b863d8e28d84e3c9628927ad77cfc6c&code=wug3
+

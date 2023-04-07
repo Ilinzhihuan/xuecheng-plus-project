@@ -1,0 +1,38 @@
+
+
+
+#微服务配置
+#spring:
+#  application:
+#    name: content-service
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.121.135:3306/xc402_content?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    username: root
+#    password: root
+# 日志文件配置路径
+spring:
+  application:
+    name: content-service
+  cloud:
+    nacos:
+      server-addr: 192.168.121.135:8849
+      discovery:
+        namespace: dev402
+        group: xuecheng-plus-project
+      config:
+        namespace: dev402
+        group: xuecheng-plus-project
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
+          - data-id: feign-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
+  profiles:
+    active: dev
+#logging:
+#  config: classpath:log4j2-dev.xml

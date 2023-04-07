@@ -1,0 +1,48 @@
+### 查询课程信息
+POST {{gateway_host}}/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202004",
+  "courseName": "java",
+  "publishStatus":""
+}
+###
+GET {{gateway_host}}/content/course/40
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMCQwcHQ3V2xmVGJuUERUY1d0cC8uMk11NUNUWHZvaG5OUWhSNjI4cXE0Um9LU2MwZEdBZEVnbVwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4MDI0NjkwMSwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiJjMDA0N2JhNC1lODAwLTQxNzUtOWRjYi0yZGNiMGUyMmY1ZTciLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.DK_qT1yNyyBJl8Fr9kO6U25TQ0L_8e1PUfo9uu2QyvA
+
+
+### 查询课程分类
+GET {{content_host}}/content/course-category/tree-nodes
+
+### 新增课程
+POST {{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "charge": "201001",
+  "price": 10,
+  "originalPrice":100,
+  "qq": "22333",
+  "wechat": "223344",
+  "phone": "13333333",
+  "validDays": 365,
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "sbke",
+  "pic": "fdsf",
+  "teachmode": "200002",
+  "users": "初级人员",
+  "tags": "tagstagstags",
+  "grade": "204001",
+  "description": "java网络编程高级java网络编程高级java网络编程高级"
+}
+
+### 课程查询
+GET {{content_host}}/content/course/40
+Content-Type: application/json
+
+### 课程计划查询
+GET {{content_host}}/content/teachplan/117/tree-nodes
+Content-Type: application/json
+

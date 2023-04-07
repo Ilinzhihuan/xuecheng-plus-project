@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: system-service
+  cloud:
+    nacos:
+      server-addr: 192.168.121.135:8849
+      config:
+        namespace: dev402
+        group: xuecheng-plus-project
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
+  profiles:
+    active: dev
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.121.135:3306/xc402_system?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    username: root
+#    password: root
+# 日志文件配置路径
+#logging:
+#  config: classpath:log4j2-dev.xml
